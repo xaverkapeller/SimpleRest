@@ -14,8 +14,6 @@ import java.util.Map;
  */
 public interface Request {
 
-    String CONTENT_TYPE_JSON = "application/json";
-
     enum Method {
         POST("POST", true, true),
         GET("GET", false, true),
