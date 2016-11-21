@@ -1,7 +1,9 @@
 package com.github.wrdlbrnft.simplerest.exceptions;
 
 /**
- * Created by kapeller on 16/07/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public class SimpleRestException extends RuntimeException {
 

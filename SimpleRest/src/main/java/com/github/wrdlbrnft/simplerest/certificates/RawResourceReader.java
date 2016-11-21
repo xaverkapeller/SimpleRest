@@ -6,7 +6,9 @@ import android.content.res.Resources;
 import java.io.InputStream;
 
 /**
- * Created by kapeller on 22/05/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public class RawResourceReader {
 

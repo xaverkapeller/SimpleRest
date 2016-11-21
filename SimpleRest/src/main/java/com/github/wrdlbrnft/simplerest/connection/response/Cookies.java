@@ -3,7 +3,9 @@ package com.github.wrdlbrnft.simplerest.connection.response;
 import java.util.List;
 
 /**
- * Created by kapeller on 03/12/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public interface Cookies {
     List<String> getAll();

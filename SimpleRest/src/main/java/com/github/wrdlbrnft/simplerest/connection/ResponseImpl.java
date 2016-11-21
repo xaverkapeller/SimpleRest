@@ -7,7 +7,9 @@ import java.net.URL;
 import java.util.Map;
 
 /**
- * Created by kapeller on 03/12/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 class ResponseImpl implements Response {
 

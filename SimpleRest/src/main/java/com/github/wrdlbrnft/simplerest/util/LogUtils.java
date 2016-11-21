@@ -12,7 +12,9 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Created by kapeller on 02/06/16.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public class LogUtils {
 

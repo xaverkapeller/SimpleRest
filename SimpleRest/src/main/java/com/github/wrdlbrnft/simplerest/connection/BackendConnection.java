@@ -9,7 +9,9 @@ import com.github.wrdlbrnft.simplerest.util.SimpleRestUtils;
 import java.net.HttpURLConnection;
 
 /**
- * Created by kapeller on 16/04/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public interface BackendConnection {
 

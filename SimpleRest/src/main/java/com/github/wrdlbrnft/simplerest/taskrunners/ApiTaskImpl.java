@@ -8,7 +8,9 @@ import com.github.wrdlbrnft.simplerest.tasks.Result;
 import com.github.wrdlbrnft.simpletasks.tasks.Task;
 
 /**
- * Created by kapeller on 26/11/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 class ApiTaskImpl<T> implements ApiTask<T> {
 

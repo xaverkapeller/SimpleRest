@@ -5,7 +5,9 @@ import android.text.TextUtils;
 import com.github.wrdlbrnft.simplerest.connection.response.Response;
 
 /**
- * Created by kapeller on 11/12/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public class InvalidResponseException extends ApiCallFailedException {
 

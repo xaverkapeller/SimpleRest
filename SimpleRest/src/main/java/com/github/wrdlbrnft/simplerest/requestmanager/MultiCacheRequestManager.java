@@ -14,7 +14,9 @@ import com.github.wrdlbrnft.simplerest.tasks.ApiTask;
 import com.github.wrdlbrnft.simplerest.tasks.Result;
 
 /**
- * Created by kapeller on 27/11/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public class MultiCacheRequestManager<K, T> {
 

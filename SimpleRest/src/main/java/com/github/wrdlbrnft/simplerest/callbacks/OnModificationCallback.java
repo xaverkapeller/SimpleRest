@@ -1,7 +1,9 @@
 package com.github.wrdlbrnft.simplerest.callbacks;
 
 /**
- * Created by kapeller on 27/11/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public interface OnModificationCallback<T> {
     void onModification(T item);

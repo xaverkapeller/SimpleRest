@@ -1,7 +1,9 @@
 package com.github.wrdlbrnft.simplerest.exceptions;
 
 /**
- * Created by kapeller on 25/11/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public class ApiCallFailedException extends RuntimeException {
 

@@ -1,11 +1,10 @@
 package com.github.wrdlbrnft.simplerest.util;
 
 /**
- * Created with Android Studio
- * User: Xaver
+ * Created with Android Studio<br>
+ * User: Xaver<br>
  * Date: 20/11/2016
  */
-
 public class SimpleRestUtils {
 
     public static <T> T requireNotNull(T value) {

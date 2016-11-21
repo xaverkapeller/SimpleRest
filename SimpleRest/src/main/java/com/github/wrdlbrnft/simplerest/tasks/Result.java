@@ -3,7 +3,9 @@ package com.github.wrdlbrnft.simplerest.tasks;
 import com.github.wrdlbrnft.simplerest.util.StatusCode;
 
 /**
- * Created by kapeller on 08/01/16.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public interface Result<T> {
     @StatusCode

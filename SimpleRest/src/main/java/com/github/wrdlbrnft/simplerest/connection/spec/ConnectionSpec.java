@@ -5,7 +5,9 @@ import java.net.HttpURLConnection;
 import java.security.GeneralSecurityException;
 
 /**
- * Created by kapeller on 22/05/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public interface ConnectionSpec {
     HttpURLConnection openConnection(String urlString) throws GeneralSecurityException, IOException;

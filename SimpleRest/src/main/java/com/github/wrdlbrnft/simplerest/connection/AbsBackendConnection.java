@@ -24,7 +24,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by kapeller on 17/04/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public abstract class AbsBackendConnection implements BackendConnection {
 

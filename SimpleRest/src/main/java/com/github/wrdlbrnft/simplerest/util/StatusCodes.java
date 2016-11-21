@@ -1,7 +1,9 @@
 package com.github.wrdlbrnft.simplerest.util;
 
 /**
- * Created by kapeller on 19/11/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public class StatusCodes {
 

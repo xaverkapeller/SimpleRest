@@ -17,7 +17,9 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 
 /**
- * Created by kapeller on 22/05/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public abstract class AbsHttpsConnectionSpec implements ConnectionSpec {
 

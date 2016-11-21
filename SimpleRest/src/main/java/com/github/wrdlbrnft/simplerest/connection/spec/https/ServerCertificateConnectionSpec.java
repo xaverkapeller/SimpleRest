@@ -12,7 +12,9 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 
 /**
- * Created by kapeller on 22/05/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public class ServerCertificateConnectionSpec extends AbsHttpsConnectionSpec implements ConnectionSpec {
 

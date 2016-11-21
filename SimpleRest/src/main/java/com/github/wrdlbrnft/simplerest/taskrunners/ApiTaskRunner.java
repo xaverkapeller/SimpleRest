@@ -13,11 +13,10 @@ import com.github.wrdlbrnft.simpletasks.tasks.Task;
 import java.util.concurrent.Callable;
 
 /**
- * Created with Android Studio
- * User: Xaver
+ * Created with Android Studio<br>
+ * User: Xaver<br>
  * Date: 20/11/2016
  */
-
 public class ApiTaskRunner {
 
     private final TaskRunner mRunner;

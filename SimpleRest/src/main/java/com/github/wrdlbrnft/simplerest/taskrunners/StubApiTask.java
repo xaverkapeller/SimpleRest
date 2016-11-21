@@ -15,7 +15,9 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- * Created by kapeller on 26/11/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public class StubApiTask<T> implements ApiTask<T> {
 

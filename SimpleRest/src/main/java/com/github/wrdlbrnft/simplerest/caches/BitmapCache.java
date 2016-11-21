@@ -4,7 +4,9 @@ import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;
 
 /**
- * Created by kapeller on 08/01/16.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public class BitmapCache<K> implements Cache<K, Bitmap> {
 

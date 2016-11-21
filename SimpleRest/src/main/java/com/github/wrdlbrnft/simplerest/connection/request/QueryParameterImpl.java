@@ -1,7 +1,9 @@
 package com.github.wrdlbrnft.simplerest.connection.request;
 
 /**
- * Created by kapeller on 03/12/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public class QueryParameterImpl implements QueryParameter {
 

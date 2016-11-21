@@ -11,7 +11,9 @@ import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 
 /**
- * Created by kapeller on 22/05/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public class Certificates {
 

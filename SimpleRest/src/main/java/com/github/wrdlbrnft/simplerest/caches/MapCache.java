@@ -6,7 +6,9 @@ import java.util.Collections;
 import java.util.Map;
 
 /**
- * Created by kapeller on 08/01/16.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public class MapCache<K, T> implements Cache<K, T> {
 

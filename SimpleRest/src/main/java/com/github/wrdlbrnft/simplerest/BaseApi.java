@@ -8,7 +8,9 @@ import com.github.wrdlbrnft.simplerest.tasks.Result;
 import java.util.concurrent.Callable;
 
 /**
- * Created by kapeller on 26/11/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public abstract class BaseApi implements Api {
 

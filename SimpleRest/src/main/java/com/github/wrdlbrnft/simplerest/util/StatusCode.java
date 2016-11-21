@@ -3,7 +3,9 @@ package com.github.wrdlbrnft.simplerest.util;
 import android.support.annotation.IntDef;
 
 /**
- * Created by kapeller on 19/11/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 @IntDef({
         StatusCodes.ServerError.INTERNAL_SERVER_ERROR, StatusCodes.ServerError.NOT_IMPLEMENTED, StatusCodes.ServerError.BAD_GATEWAY,

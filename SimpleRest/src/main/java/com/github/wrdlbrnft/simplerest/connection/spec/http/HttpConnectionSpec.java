@@ -8,7 +8,9 @@ import java.net.URL;
 import java.security.GeneralSecurityException;
 
 /**
- * Created by kapeller on 22/05/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public class HttpConnectionSpec implements ConnectionSpec {
 

@@ -1,7 +1,9 @@
 package com.github.wrdlbrnft.simplerest;
 
 /**
- * Created by kapeller on 17/02/16.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public class SimpleRestConfig {
 

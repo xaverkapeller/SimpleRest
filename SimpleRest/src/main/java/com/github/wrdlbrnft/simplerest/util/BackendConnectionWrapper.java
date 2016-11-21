@@ -16,7 +16,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by kapeller on 02/12/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public class BackendConnectionWrapper implements BackendConnection {
 

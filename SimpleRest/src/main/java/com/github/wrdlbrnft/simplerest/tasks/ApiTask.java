@@ -5,7 +5,9 @@ import com.github.wrdlbrnft.simplerest.callbacks.ErrorCallback;
 import com.github.wrdlbrnft.simplerest.callbacks.ResultCallback;
 
 /**
- * Created by kapeller on 26/11/15.
+ * Created with Android Studio<br>
+ * User: Xaver<br>
+ * Date: 20/11/2016
  */
 public interface ApiTask<T> {
     Result<T> await();
