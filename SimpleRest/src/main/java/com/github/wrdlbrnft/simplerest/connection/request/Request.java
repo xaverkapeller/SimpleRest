@@ -20,7 +20,8 @@ public interface Request {
         POST("POST", true, true),
         GET("GET", false, true),
         PUT("PUT", true, true),
-        DELETE("DELETE", false, true);
+        DELETE("DELETE", false, true),
+        HEAD("HEAD", false, false);
 
         private final String mHttpRepresentation;
         private final boolean mDoesOutput;
