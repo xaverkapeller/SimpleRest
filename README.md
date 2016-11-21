@@ -7,7 +7,7 @@ A lightweight, versatile REST library for Android.
 Just add this dependency to your build.gradle file:
 
 ```groovy
-compile 'com.github.wrdlbrnft:simple-rest:0.2.0.7'
+compile 'com.github.wrdlbrnft:simple-rest:0.2.0.11'
 ```
 
 ## Basic Usage
