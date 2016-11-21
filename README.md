@@ -7,7 +7,7 @@ A lightweight, versatile REST library for Android.
 Just add this dependency to your build.gradle file:
 
 ```groovy
-compile 'com.github.wrdlbrnft:simple-rest:0.2.0.5'
+compile 'com.github.wrdlbrnft:simple-rest:0.2.0.6'
 ```
 
 ## Basic Usage
@@ -25,11 +25,11 @@ You have to specify the endpoint url of your backend, as well as a `ConnectionSp
 
 SimpleRest contains multiple predefined `ConnectionSpec` implementations:
 
-| Implementation | Description   |
-| -------------  |:-------------:|
-| `HttpConnectionSpec`       | The default `ConnectionSpec`. Can be used for normal http and https connections. |
-| `ServerCertificateConnectionSpec`       | Allows you to define a server certificate to establish the connection. |
-| `HttpsClientAuthConnectionSpec`  | Allows you to use a client certificate and a server certificate to establish the connection. |
+| Implementation                    | Description                                                                                  |
+| --------------------------------- | -------------------------------------------------------------------------------------------- |
+| `HttpConnectionSpec`              | The default `ConnectionSpec`. Can be used for normal http and https connections.             |
+| `ServerCertificateConnectionSpec` | Allows you to define a server certificate to establish the connection.                       |
+| `HttpsClientAuthConnectionSpec`   | Allows you to use a client certificate and a server certificate to establish the connection. |
 
 After you created your `BackendConnection` instance you can use it to send requests to your backend:
 
