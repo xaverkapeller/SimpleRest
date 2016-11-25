@@ -25,7 +25,7 @@ android {
 }
 
 dependencies {
-    compile 'com.github.wrdlbrnft:simple-tasks:0.2.0.6'
+    compile 'com.github.wrdlbrnft:simple-tasks:0.2.0.7'
     compile 'com.android.support:support-v4:25.0.1'
 }
 
