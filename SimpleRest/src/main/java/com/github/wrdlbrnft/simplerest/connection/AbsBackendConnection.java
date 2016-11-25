@@ -59,7 +59,9 @@ public abstract class AbsBackendConnection implements BackendConnection {
         final InputStream inputStream = status < 400
                 ? connection.getInputStream()
                 : connection.getErrorStream();
-        final String responseData = readDataFromStream(inputStream);
+        final String responseData = connection.getDoOutput() 
+            ? readDataFromStream(inputStream) 
+            : null;
         return new ResponseImpl(status, responseData, headers, cookies, connection.getURL());
     }
 
