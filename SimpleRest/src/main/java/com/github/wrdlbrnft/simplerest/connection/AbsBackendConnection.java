@@ -56,7 +56,7 @@ public abstract class AbsBackendConnection implements BackendConnection {
         final int status = connection.getResponseCode();
         final Map<String, String> headers = parseResponseHeaders(connection);
         final Cookies cookies = parseCookieFromHeaders(headers);
-        final String responseData = readResponseData(connnection);
+        final String responseData = readResponseData(connection);
         return new ResponseImpl(status, responseData, headers, cookies, connection.getURL());
     }
     
