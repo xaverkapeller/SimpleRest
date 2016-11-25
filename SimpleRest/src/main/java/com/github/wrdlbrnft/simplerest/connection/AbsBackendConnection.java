@@ -62,7 +62,7 @@ public abstract class AbsBackendConnection implements BackendConnection {
     
     private String readResponseData(HttpURLConnection connection) throws IOException {
         if(connection.getDoInput()) {
-            final InputStream inputStream = status < 400
+            final InputStream inputStream = connection.getResponseCode() < 400
                     ? connection.getInputStream()
                     : connection.getErrorStream();
             return readDataFromStream(inputStream);
