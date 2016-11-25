@@ -56,13 +56,18 @@ public abstract class AbsBackendConnection implements BackendConnection {
         final int status = connection.getResponseCode();
         final Map<String, String> headers = parseResponseHeaders(connection);
         final Cookies cookies = parseCookieFromHeaders(headers);
-        final InputStream inputStream = status < 400
-                ? connection.getInputStream()
-                : connection.getErrorStream();
-        final String responseData = connection.getDoInput() 
-            ? readDataFromStream(inputStream) 
-            : null;
+        final String responseData = readResponseData(connnection);
         return new ResponseImpl(status, responseData, headers, cookies, connection.getURL());
+    }
+    
+    private String readResponseData(HttpURLConnection connection) throws IOException {
+        if(connection.getDoInput()) {
+            final InputStream inputStream = status < 400
+                    ? connection.getInputStream()
+                    : connection.getErrorStream();
+            return readDataFromStream(inputStream);
+        }
+        return null;
     }
 
     private Cookies parseCookieFromHeaders(Map<String, String> headers) {
