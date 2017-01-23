@@ -14,9 +14,17 @@ import java.util.concurrent.Callable;
  */
 public abstract class BaseApi implements Api {
 
-    private final ApiTaskRunner mRunner;
+    private ApiTaskRunner mRunner;
 
     protected BaseApi(ApiTaskRunner runner) {
+        mRunner = runner;
+    }
+    
+    protected BaseApi() {
+        this(null);
+    }
+    
+    protected void setApiTaskRunner(ApiTaskRunner runner) {
         mRunner = runner;
     }
 
