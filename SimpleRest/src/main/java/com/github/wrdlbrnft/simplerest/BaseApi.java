@@ -32,14 +32,6 @@ public abstract class BaseApi implements Api {
         return mRunner.queueTask(callable);
     }
 
-    protected <T> ApiTask<T> queueTask(Callable<Result<T>> callable, ApiCallback<T> internalCallback) {
-        return mRunner.queueTask(callable, internalCallback);
-    }
-
-    protected <T> ApiTask<T> cacheTask(T result) {
-        return mRunner.cacheTask(result);
-    }
-
     public ApiTaskRunner getRunner() {
         return mRunner;
     }

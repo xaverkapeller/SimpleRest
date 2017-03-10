@@ -5,6 +5,7 @@ import com.github.wrdlbrnft.simplerest.callbacks.ErrorCallback;
 import com.github.wrdlbrnft.simplerest.callbacks.ResultCallback;
 import com.github.wrdlbrnft.simplerest.tasks.ApiTask;
 import com.github.wrdlbrnft.simplerest.tasks.Result;
+import com.github.wrdlbrnft.simpletasks.tasks.CancelCallback;
 import com.github.wrdlbrnft.simpletasks.tasks.Task;
 
 /**
@@ -44,6 +45,12 @@ class ApiTaskImpl<T> implements ApiTask<T> {
                 callback.onError();
             }
         });
+        mTask.onCanceled(new CancelCallback() {
+            @Override
+            public void onCanceled() {
+                callback.onError();
+            }
+        });
         return this;
     }
 
@@ -63,6 +70,12 @@ class ApiTaskImpl<T> implements ApiTask<T> {
         mTask.onError(new com.github.wrdlbrnft.simpletasks.tasks.ErrorCallback() {
             @Override
             public void onError(Throwable throwable) {
+                callback.onError();
+            }
+        });
+        mTask.onCanceled(new CancelCallback() {
+            @Override
+            public void onCanceled() {
                 callback.onError();
             }
         });
