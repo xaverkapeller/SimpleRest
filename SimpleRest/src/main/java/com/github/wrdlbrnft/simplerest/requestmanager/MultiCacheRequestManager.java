@@ -81,12 +81,14 @@ public class MultiCacheRequestManager<K, T> {
 
     public void invalidateCache(K id) {
         synchronized (mTaskMap) {
+            mCache.evict(id);
             mTaskMap.remove(id);
         }
     }
 
     public void clearCache() {
         synchronized (mTaskMap) {
+            mCache.clear();
             mTaskMap.clear();
         }
     }
