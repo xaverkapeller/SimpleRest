@@ -19,6 +19,8 @@ import java.util.Map;
  * Date: 20/11/2016
  */
 class BackendConnectionImpl extends AbsBackendConnection {
+    
+    private static final String TAG = "BackendConnectionImpl"
 
     private final String mEndpointUrl;
     private final ConnectionSpec mConnectionSpec;
@@ -33,6 +35,8 @@ class BackendConnectionImpl extends AbsBackendConnection {
 
         try {
             final String urlString = createUrl(request);
+            
+            Log.i(TAG, "Opening Connection to: " + urlString);
 
             final HttpURLConnection connection = mConnectionSpec.openConnection(urlString);
             connection.setInstanceFollowRedirects(request.shouldFollowRedirects());
