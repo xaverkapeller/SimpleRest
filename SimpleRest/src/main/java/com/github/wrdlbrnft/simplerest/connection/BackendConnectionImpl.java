@@ -20,7 +20,7 @@ import java.util.Map;
  */
 class BackendConnectionImpl extends AbsBackendConnection {
     
-    private static final String TAG = "BackendConnectionImpl"
+    private static final String TAG = "BackendConnectionImpl";
 
     private final String mEndpointUrl;
     private final ConnectionSpec mConnectionSpec;
