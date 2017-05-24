@@ -8,6 +8,7 @@ import com.github.wrdlbrnft.simplerest.connection.request.Request;
 import com.github.wrdlbrnft.simplerest.connection.spec.ConnectionSpec;
 
 import java.io.IOException;
+import android.util.Log;
 import java.net.HttpURLConnection;
 import java.security.GeneralSecurityException;
 import java.util.List;
