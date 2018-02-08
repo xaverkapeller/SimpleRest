@@ -9,7 +9,7 @@ import com.github.wrdlbrnft.simplerest.util.StatusCode;
  */
 public interface ApiCallback<T> {
     void onResult(@StatusCode int statusCode, T result);
-    void onError();
+    void onError(Throwable throwable);
 
     abstract class Adapter<T> implements ApiCallback<T> {
 
@@ -19,7 +19,7 @@ public interface ApiCallback<T> {
         }
 
         @Override
-        public void onError() {
+        public void onError(Throwable throwable) {
 
         }
     }
