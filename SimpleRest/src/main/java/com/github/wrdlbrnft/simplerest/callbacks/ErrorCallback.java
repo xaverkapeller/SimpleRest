@@ -6,5 +6,5 @@ package com.github.wrdlbrnft.simplerest.callbacks;
  * Date: 20/11/2016
  */
 public interface ErrorCallback {
-    void onError();
+    void onError(Throwable throwable);
 }
