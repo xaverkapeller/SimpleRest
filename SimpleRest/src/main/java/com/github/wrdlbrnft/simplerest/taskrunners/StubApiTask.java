@@ -89,7 +89,7 @@ public class StubApiTask<T> implements ApiTask<T> {
 
     @Override
     public void cancel() {
-        notifyError();
+        notifyError(new java.util.concurrent.CancellationException("Task was canceled"));
     }
 
     public void notifyResult(@StatusCode final int statusCode, final T data) {
@@ -107,7 +107,7 @@ public class StubApiTask<T> implements ApiTask<T> {
         });
     }
 
-    public void notifyError(Throwable throwable) {
+    public void notifyError(final Throwable throwable) {
         mResult = null;
         if (mWaiting.get()) {
             mWaiting.notifyAll();
