@@ -68,7 +68,7 @@ public class MultiCacheRequestManager<K, T> {
                     })
                     .onError(new ErrorCallback() {
                         @Override
-                        public void onError() {
+                        public void onError(Throwable throwable) {
                             synchronized (mTaskMap) {
                                 mTaskMap.remove(key);
                             }
