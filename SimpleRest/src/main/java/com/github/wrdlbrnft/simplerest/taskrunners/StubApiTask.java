@@ -64,7 +64,7 @@ public class StubApiTask<T> implements ApiTask<T> {
             }
 
             @Override
-            public void onError() {
+            public void onError(Throwable throwable) {
 
             }
         });
@@ -80,8 +80,8 @@ public class StubApiTask<T> implements ApiTask<T> {
             }
 
             @Override
-            public void onError() {
-                callback.onError();
+            public void onError(Throwable throwable) {
+                callback.onError(throwable);
             }
         });
         return this;
@@ -107,7 +107,7 @@ public class StubApiTask<T> implements ApiTask<T> {
         });
     }
 
-    public void notifyError() {
+    public void notifyError(Throwable throwable) {
         mResult = null;
         if (mWaiting.get()) {
             mWaiting.notifyAll();
@@ -116,7 +116,7 @@ public class StubApiTask<T> implements ApiTask<T> {
             @Override
             public void run() {
                 for (ApiCallback<T> callback : mCallbacks) {
-                    callback.onError();
+                    callback.onError(throwable);
                 }
             }
         });
