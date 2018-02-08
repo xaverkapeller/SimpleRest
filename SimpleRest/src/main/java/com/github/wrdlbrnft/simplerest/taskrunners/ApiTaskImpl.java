@@ -70,13 +70,13 @@ class ApiTaskImpl<T> implements ApiTask<T> {
         mTask.onError(new com.github.wrdlbrnft.simpletasks.tasks.ErrorCallback() {
             @Override
             public void onError(Throwable throwable) {
-                callback.onError();
+                callback.onError(throwable);
             }
         });
         mTask.onCanceled(new CancelCallback() {
             @Override
             public void onCanceled() {
-                callback.onError();
+                callback.onError(new java.util.concurrent.CancellationException("Task was canceled."));
             }
         });
         return this;
