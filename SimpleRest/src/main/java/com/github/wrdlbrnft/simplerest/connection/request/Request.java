@@ -3,8 +3,7 @@ package com.github.wrdlbrnft.simplerest.connection.request;
 import android.support.v4.util.ArrayMap;
 import android.text.TextUtils;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -53,10 +52,11 @@ public interface Request {
 
     Method getMethod();
     String getRelativeUrl();
-    String getData();
+    byte[] getData();
     boolean shouldFollowRedirects();
     Map<String, String> getHeaders();
     List<QueryParameter> getQueryParameters();
+    List<String> getPathSegments();
 
     class Builder {
 
@@ -65,14 +65,12 @@ public interface Request {
         private final Map<String, String> mHeaderMap = new ArrayMap<>();
         private final List<QueryParameter> mQueryParameters = new ArrayList<>();
         private final List<String> mCookies = new ArrayList<>();
+        private final List<String> mPathParameters = new ArrayList<>();
 
         private Method mMethod = Method.GET;
         private String mRelativeUrl = "";
-        private String mData = null;
+        private byte[] mData = null;
         private boolean mFollowRedirects = true;
-
-        public Builder() {
-        }
 
         public Builder setMethod(Method method) {
             mMethod = method;
@@ -84,10 +82,15 @@ public interface Request {
             return this;
         }
 
-        public Builder setData(String data) {
-            mHeaderMap.put("Content-Length", data != null ? String.valueOf(data.length()) : null);
+        public Builder setData(byte[] data) {
+            mHeaderMap.put("Content-Length", data != null ? String.valueOf(data.length) : null);
             mData = data;
             return this;
+        }
+
+        public Builder setData(String data) {
+            final byte[] bytes = data.getBytes(Charset.forName("UTF-8"));
+            return setData(bytes);
         }
 
         public Builder setContentType(String contentType) {
@@ -116,11 +119,12 @@ public interface Request {
         }
 
         public Builder addQueryParameter(String key, String value) {
-            try {
-                mQueryParameters.add(new QueryParameterImpl(key, URLEncoder.encode(value, "UTF-8")));
-            } catch (UnsupportedEncodingException e) {
-                throw new IllegalStateException("UTF-8 seems to be unsupported on this device?", e);
-            }
+            mQueryParameters.add(new QueryParameterImpl(key, value));
+            return this;
+        }
+
+        public Builder addPathParameter(String path) {
+            mPathParameters.add(path);
             return this;
         }
 
@@ -128,7 +132,7 @@ public interface Request {
             if (!mCookies.isEmpty()) {
                 mHeaderMap.put(HEADER_NAME_COOKIES, TextUtils.join(";", mCookies));
             }
-            return new RequestImpl(mMethod, mRelativeUrl, mQueryParameters, mFollowRedirects, mData, mHeaderMap);
+            return new RequestImpl(mMethod, mRelativeUrl, mPathParameters, mQueryParameters, mFollowRedirects, mData, mHeaderMap);
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.github.wrdlbrnft.simplerest.connection.request;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -12,14 +13,16 @@ class RequestImpl implements Request {
 
     private final Method mMethod;
     private final String mRelativeUrl;
+    private final List<String> mPathSegments;
     private final List<QueryParameter> mQueryParameters;
     private final boolean mFollowRedirects;
-    private final String mData;
+    private final byte[] mData;
     private final Map<String, String> mHeaderMap;
 
-    public RequestImpl(Method method, String relativeUrl, List<QueryParameter> queryParameters, boolean followRedirects, String data, Map<String, String> headerMap) {
+    public RequestImpl(Method method, String relativeUrl, List<String> pathSegments, List<QueryParameter> queryParameters, boolean followRedirects, byte[] data, Map<String, String> headerMap) {
         mMethod = method;
         mRelativeUrl = relativeUrl;
+        mPathSegments = pathSegments;
         mQueryParameters = queryParameters;
         mFollowRedirects = followRedirects;
         mData = data;
@@ -41,7 +44,12 @@ class RequestImpl implements Request {
     }
 
     @Override
-    public String getData() {
+    public List<String> getPathSegments() {
+        return mPathSegments;
+    }
+
+    @Override
+    public byte[] getData() {
         return mData;
     }
 
@@ -53,5 +61,18 @@ class RequestImpl implements Request {
     @Override
     public Map<String, String> getHeaders() {
         return mHeaderMap;
+    }
+
+    @Override
+    public String toString() {
+        return "RequestImpl{" +
+                "mMethod=" + mMethod +
+                ", mRelativeUrl='" + mRelativeUrl + '\'' +
+                ", mPathSegments=" + mPathSegments +
+                ", mQueryParameters=" + mQueryParameters +
+                ", mFollowRedirects=" + mFollowRedirects +
+                ", mData=" + Arrays.toString(mData) +
+                ", mHeaderMap=" + mHeaderMap +
+                '}';
     }
 }

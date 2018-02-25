@@ -2,6 +2,9 @@ package com.github.wrdlbrnft.simplerest.util;
 
 import android.support.annotation.IntDef;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
 /**
  * Created with Android Studio<br>
  * User: Xaver<br>
@@ -34,5 +37,6 @@ import android.support.annotation.IntDef;
         StatusCodes.Success.MULTI_STATUS, StatusCodes.Success.ALREADY_REPORTED, StatusCodes.Success.IM_USED, StatusCodes.Informational.CONTINUE,
         StatusCodes.Informational.SWITCHING_PROTOCOLS, StatusCodes.Informational.PROCESSING, StatusCodes.INVALID
 })
+@Retention(RetentionPolicy.SOURCE)
 public @interface StatusCode {
 }

@@ -6,8 +6,6 @@ import com.github.wrdlbrnft.simplerest.connection.spec.ConnectionSpec;
 import com.github.wrdlbrnft.simplerest.connection.spec.http.HttpConnectionSpec;
 import com.github.wrdlbrnft.simplerest.util.SimpleRestUtils;
 
-import java.net.HttpURLConnection;
-
 /**
  * Created with Android Studio<br>
  * User: Xaver<br>
@@ -15,8 +13,17 @@ import java.net.HttpURLConnection;
  */
 public interface BackendConnection {
 
+    interface Observer {
+        default void onPerformingRequest(Request request) {}
+        default void onResponseReceived(Response response) {}
+        default void onRequestFailed(Throwable throwable) {}
+        default void onRequestProcessed(Request request, Response response, Throwable error) {}
+    }
+
     Response perform(Request request);
-    HttpURLConnection openConnection(Request request);
+
+    void registerObserver(Observer observer);
+    void unregisterObserver(Observer observer);
 
     class Builder {
 

@@ -1,6 +1,7 @@
 package com.github.wrdlbrnft.simplerest.connection.response;
 
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.Map;
 
 /**
@@ -10,7 +11,9 @@ import java.util.Map;
  */
 public interface Response {
     int getStatus();
-    String getData();
+    byte[] getData();
+    String getDataAsString();
+    String getDataAsString(Charset charset);
     Cookies getCookies();
     Map<String, String> getHeaders();
     String getHeaderValue(String name);

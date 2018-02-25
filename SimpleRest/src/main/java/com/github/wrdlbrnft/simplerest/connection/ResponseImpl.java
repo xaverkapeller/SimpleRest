@@ -4,6 +4,8 @@ import com.github.wrdlbrnft.simplerest.connection.response.Cookies;
 import com.github.wrdlbrnft.simplerest.connection.response.Response;
 
 import java.net.URL;
+import java.nio.charset.Charset;
+import java.util.Arrays;
 import java.util.Map;
 
 /**
@@ -14,12 +16,12 @@ import java.util.Map;
 class ResponseImpl implements Response {
 
     private final int mStatus;
-    private final String mData;
+    private final byte[] mData;
     private final Map<String, String> mHeaderMap;
     private final Cookies mCookies;
     private final URL mLocation;
 
-    public ResponseImpl(int status, String data, Map<String, String> headerMap, Cookies cookies, URL location) {
+    public ResponseImpl(int status, byte[] data, Map<String, String> headerMap, Cookies cookies, URL location) {
         mStatus = status;
         mData = data;
         mHeaderMap = headerMap;
@@ -33,8 +35,18 @@ class ResponseImpl implements Response {
     }
 
     @Override
-    public String getData() {
+    public byte[] getData() {
         return mData;
+    }
+
+    @Override
+    public String getDataAsString() {
+        return getDataAsString(Charset.forName("UTF-8"));
+    }
+
+    @Override
+    public String getDataAsString(Charset charset) {
+        return new String(mData, charset);
     }
 
     @Override
@@ -60,9 +72,10 @@ class ResponseImpl implements Response {
     public String toString() {
         return "ResponseImpl{" +
                 "mStatus=" + mStatus +
-                ", mData='" + mData + '\'' +
+                ", mData=" + Arrays.toString(mData) +
                 ", mHeaderMap=" + mHeaderMap +
                 ", mCookies=" + mCookies +
+                ", mLocation=" + mLocation +
                 '}';
     }
 }

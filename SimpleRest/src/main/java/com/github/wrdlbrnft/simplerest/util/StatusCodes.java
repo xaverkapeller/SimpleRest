@@ -5,6 +5,7 @@ package com.github.wrdlbrnft.simplerest.util;
  * User: Xaver<br>
  * Date: 20/11/2016
  */
+@SuppressWarnings({"WeakerAccess", "unused"})
 public class StatusCodes {
 
     public static final int INVALID = -1;
@@ -800,7 +801,7 @@ public class StatusCodes {
          * <p>
          * This status code is not specified in any RFC and is returned by certain services,
          * for instance Microsoft Azure and CloudFlare servers: "The 520 error is essentially
-         * a “catch-all” response for when the origin server returns something unexpected or
+         * a "catch-all" response for when the origin server returns something unexpected or
          * something that is not tolerated/interpreted (protocol violation or empty response)."
          * </p>
          */
@@ -834,5 +835,65 @@ public class StatusCodes {
          * </p>
          */
         public static final int NETWORK_CONNECT_TIMEOUT_ERROR = 599;
+    }
+
+    /**
+     * Checks if the supplied status code is informational (Codes 100 - 199).
+     *
+     * @param statusCode The status code to check
+     * @return Returns true if the status code is informational.
+     */
+    public static boolean isInformational(@StatusCode int statusCode) {
+        return statusCode >= 100 && statusCode < 200;
+    }
+
+    /**
+     * Checks if the supplied status code is a success (Codes 200 - 299).
+     *
+     * @param statusCode The status code to check
+     * @return Returns true if the status code is a success.
+     */
+    public static boolean isSuccess(@StatusCode int statusCode) {
+        return statusCode >= 200 && statusCode < 300;
+    }
+
+    /**
+     * Checks if the supplied status code is a redirection (Codes 300 - 399).
+     *
+     * @param statusCode The status code to check
+     * @return Returns true if the status code is a redirection.
+     */
+    public static boolean isRedirection(@StatusCode int statusCode) {
+        return statusCode >= 300 && statusCode < 400;
+    }
+
+    /**
+     * Checks if the supplied status code is a client error (Codes 400 - 499).
+     *
+     * @param statusCode The status code to check
+     * @return Returns true if the status code is a client error.
+     */
+    public static boolean isClientError(@StatusCode int statusCode) {
+        return statusCode >= 400 && statusCode < 500;
+    }
+
+    /**
+     * Checks if the supplied status code is a server error (Codes 500 - 599).
+     *
+     * @param statusCode The status code to check
+     * @return Returns true if the status code is a server error.
+     */
+    public static boolean isServerError(@StatusCode int statusCode) {
+        return statusCode >= 500 && statusCode < 600;
+    }
+
+    /**
+     * Checks if the supplied status code is user defined. (Codes 600+)
+     *
+     * @param statusCode The status code to check
+     * @return Returns true if the status code is user defined.
+     */
+    public static boolean isUserDefined(@StatusCode int statusCode) {
+        return statusCode >= 600;
     }
 }
