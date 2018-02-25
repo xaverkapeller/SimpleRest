@@ -78,6 +78,9 @@ public interface Request {
         }
 
         public Builder setRelativeUrl(String relativeUrl) {
+            if(relativeUrl.startsWith("/")) {
+                return setRelativeUrl(relativeUrl.substring(1));
+            }
             mRelativeUrl = relativeUrl;
             return this;
         }
@@ -124,6 +127,9 @@ public interface Request {
         }
 
         public Builder addPathParameter(String path) {
+            if (path.startsWith("/")) {
+                return addPathParameter(path.substring(1));
+            }
             mPathParameters.add(path);
             return this;
         }
