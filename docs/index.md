@@ -1,7 +1,3 @@
-# SimpleRest
-
-A lightweight, versatile REST library for Android.
-
 ## How to add it to your project
 
 Just add this dependency to your build.gradle file:
